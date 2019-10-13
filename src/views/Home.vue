@@ -1,18 +1,26 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="container">
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
+import firebaseApp from '../firebaseConfig'
 export default {
   name: 'home',
-  components: {
-    HelloWorld
-  }
+  beforeMount(){
+    let uid = localStorage.getItem('uid')
+    console.log(uid)
+    if(uid == null){
+      this.$router.push('/login')
+    }
+    else {
+      if(firebaseApp.auth.currentUser.email == "admin@gmail.com")
+      this.$router.push('/admin')
+      else
+      this.$router.push('/volunteer')
+    }
+  },
+  
 }
 </script>

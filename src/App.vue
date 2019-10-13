@@ -1,20 +1,36 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
     <router-view/>
   </div>
 </template>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+@import url('https://fonts.googleapis.com/css?family=Raleway:200&display=swap');
+
+body , html {
+  font-family:'Raleway','Avenir', Helvetica, Arial, sans-serif;
+  font-weight: bold;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  
+}
+::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,0.3);
+    background-color: black;
+}
+
+::-webkit-scrollbar
+{
+    width: 3px;
+    height: 3px;
+    background-color: black;
+}
+
+::-webkit-scrollbar-thumb
+{
+    background-color: #A32A29;
 }
 #nav {
   padding: 30px;
